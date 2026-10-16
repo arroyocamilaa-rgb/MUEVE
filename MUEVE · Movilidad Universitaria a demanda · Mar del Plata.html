@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MUEVE · Movilidad Universitaria a demanda · Mar del Plata</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#14213d;--mut:#5b6b84;--br:#dde4ee;--pri:#0b5fff;--pri2:#e6efff;--acc:#00a884;--warn:#d9480f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1424;--card:#16203a;--ink:#eaf0fb;--mut:#9fb0cc;--br:#27365a;--pri:#5b9bff;--pri2:#1b2c55;--acc:#2fd4aa;--warn:#ff8a5c}}
+:root[data-theme="dark"]{--bg:#0d1424;--card:#16203a;--ink:#eaf0fb;--mut:#9fb0cc;--br:#27365a;--pri:#5b9bff;--pri2:#1b2c55;--acc:#2fd4aa;--warn:#ff8a5c}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px;height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--pri)}h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+.w{max-width:1080px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--card);border-bottom:1px solid var(--br)}
+header .w{display:flex;align-items:center;gap:14px;height:58px}
+.logo{font-weight:800;font-size:21px;letter-spacing:.5px;color:var(--pri);text-decoration:none}
+nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto}
+nav a{padding:8px 11px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px;white-space:nowrap}
+nav a:hover{background:var(--pri2)}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:10px;padding:12px 20px;font:600 15px inherit;font-family:inherit;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{filter:brightness(1.1)}.btn.o{background:transparent;color:var(--pri);border:1.5px solid var(--pri)}
+.hero{background:linear-gradient(135deg,#0b3d91,#0b5fff 60%,#00a884);color:#fff;padding:54px 0 90px}
+.hero h1{font-size:clamp(30px,5vw,50px);max-width:680px}.hero p{max-width:600px;font-size:18px;opacity:.94}
+.hero .btn{background:#fff;color:#0b3d91}.hero .btn.o{background:transparent;color:#fff;border-color:#fff}
+.pill{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:99px;font-size:13px;margin-bottom:14px}
+section{padding:46px 0}
+.card{background:var(--card);border:1px solid var(--br);border-radius:16px;padding:20px}
+#reservar{margin-top:-64px;padding-top:0}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:820px){.g2,.g3,.g4{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}}
+label{font-size:13px;font-weight:600;color:var(--mut);display:block;margin-bottom:4px}
+select,input{width:100%;padding:11px;border:1.5px solid var(--br);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+select:focus,input:focus,button:focus-visible{outline:3px solid var(--pri);outline-offset:1px}
+.seg{display:flex;border:1.5px solid var(--br);border-radius:10px;overflow:hidden}
+.seg button{flex:1;padding:11px;border:0;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.seg button.on{background:var(--pri);color:#fff;font-weight:600}
+.pax{display:flex;align-items:center;gap:10px;border:1.5px solid var(--br);border-radius:10px;padding:4px;background:var(--bg)}
+.pax button{width:36px;height:36px;border-radius:8px;border:0;background:var(--pri2);color:var(--pri);font-size:20px;cursor:pointer}
+.pax b{flex:1;text-align:center}
+.opt{display:flex;align-items:center;gap:14px;padding:14px;border:1.5px solid var(--br);border-radius:12px;margin-top:10px;background:var(--bg);flex-wrap:wrap}
+.opt.best{border-color:var(--acc)}.opt .t{font-size:26px;font-weight:800;min-width:84px}
+.opt .i{flex:1;min-width:180px;font-size:14px;color:var(--mut)}
+.tag{background:var(--acc);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;margin-left:6px;vertical-align:middle}
+.cmp{margin-top:12px;font-size:14px;background:var(--pri2);border-radius:10px;padding:10px 14px}
+.ok{border:2px solid var(--acc);border-radius:14px;padding:16px;margin-top:12px}
+.hint{font-size:13px;color:var(--mut)}
+#map{width:100%;height:auto;background:var(--pri2);border-radius:14px;touch-action:manipulation}
+#map text{fill:var(--ink);font:600 15px system-ui,sans-serif;pointer-events:none}
+.nd{cursor:pointer}.nd circle{transition:r .15s}.nd:hover circle{r:13}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{padding:10px 16px;border-radius:99px;border:1.5px solid var(--br);background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.tabs button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.big{font-size:34px;font-weight:800;color:var(--pri)}
+.tl{display:flex;gap:6px;flex-wrap:wrap}
+.tl button{flex:1;min-width:46px;padding:9px 0;border:1.5px solid var(--br);border-radius:8px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit}
+.tl button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+details{border:1px solid var(--br);border-radius:12px;padding:12px 16px;background:var(--card);margin-bottom:8px}
+summary{cursor:pointer;font-weight:600}
+footer{background:#0b1730;color:#c8d4ea;padding:30px 0;font-size:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1;min-width:150px}
+.bar{height:10px;border-radius:6px;background:var(--br);overflow:hidden}.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .5s}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="#top" title="MUEVE: Movilidad Universitaria y Estudiantil para Viajes Eficientes">🚌 MUEVE</a>
+<nav><a href="#reservar">Reservar</a><a href="#mapa">Mapa</a><a href="#como">Cómo funciona</a><a href="#participa">Participá</a><a href="#mesa">Proyecto</a></nav></div></header>
+
+<div class="hero" id="top"><div class="w">
+<span class="pill"><b>MUEVE</b> = Movilidad Universitaria y Estudiantil para Viajes Eficientes</span> <span class="pill">Prototipo · General Pueyrredon · datos simulados</span>
+<h1>Tu viaje a la universidad, a demanda.</h1>
+<p>Elegí de dónde salís y a qué sede vas. MUEVE agrupa pedidos compatibles de otros estudiantes y docentes y arma el recorrido más eficiente, sin transbordos eternos.</p>
+<div class="row" style="max-width:420px;margin-top:20px"><a class="btn" href="#reservar">Reservar un viaje</a><a class="btn o" href="#mapa">Explorar el mapa</a></div>
+</div></div>
+
+<section id="reservar"><div class="w"><div class="card">
+<h2>Reservá tu viaje</h2>
+<div class="grid g4">
+<div><label for="o">Origen (barrio / localidad)</label><select id="o"></select></div>
+<div><label for="d">Destino (sede)</label><select id="d"></select></div>
+<div><label>Tipo de horario</label><div class="seg" id="mode"><button data-m="sal" class="on">Salgo a las</button><button data-m="lleg">Llego a las</button></div></div>
+<div><label for="h">Hora</label><input type="time" id="h" value="07:30"></div>
+</div>
+<div class="grid g4" style="margin-top:12px">
+<div><label>Pasajeros</label><div class="pax"><button id="mn" aria-label="Menos">−</button><b id="pv">1</b><button id="mp" aria-label="Más">+</button></div></div>
+<div><label for="u">Perfil</label><select id="u"><option>Estudiante</option><option>Docente</option><option>Personal no docente</option><option>Investigador/a</option></select></div>
+<div style="grid-column:span 2;align-self:end"><button class="btn" id="go" style="width:100%">Buscar viaje optimizado</button></div>
+</div>
+<p class="hint">Tip: también podés tocar los puntos del <a href="#mapa">mapa</a> para elegir origen y destino.</p>
+<div id="res" aria-live="polite"></div>
+</div></div></section>
+
+<section id="mapa" style="padding-top:10px"><div class="w">
+<h2>Mapa del servicio</h2>
+<p class="hint">Mapa esquemático basado en el corredor universitario (posiciones aproximadas; Sedes 1–6 provisorias hasta confirmar sus nombres). Tocá un barrio para fijarlo como origen y una sede como destino; el vehículo recorre el trayecto elegido.</p>
+<div class="grid g2" style="grid-template-columns:2fr 1fr;align-items:start">
+<div class="card" style="padding:10px"><svg id="map" viewBox="0 0 825 715" role="img" aria-label="Mapa esquemático del Partido de General Pueyrredon"></svg></div>
+<div class="card"><h3>Tu selección</h3><div id="sel" class="hint">Elegí un origen en el mapa.</div>
+<hr style="border:0;border-top:1px solid var(--br);margin:14px 0"><label>Filtrar franja de demanda</label>
+<select id="fr"><option value="all">Todas</option><option value="m">Mañana (7–10 h)</option><option value="t">Tarde (13–16 h)</option><option value="n">Noche (18–22 h)</option></select>
+<p class="hint" style="margin-top:12px">Los puntos más grandes muestran dónde hay más pedidos simulados en esa franja.</p><label style="display:flex;gap:8px;align-items:center;cursor:pointer;font-size:14px;color:var(--ink)"><input type="checkbox" id="cor" checked style="width:auto"> Mostrar corredor universitario</label></div></div>
+</div></section>
+
+<section id="como" style="background:var(--card)"><div class="w">
+<h2>Cómo funciona</h2>
+<div class="tabs" id="tabs"></div><div id="tabc" class="card" style="background:var(--bg)"></div>
+<h3 style="margin-top:28px">Por qué hace falta</h3>
+<div class="grid g3">
+<div class="card"><div class="big" data-n="60000">0</div>personas se mueven a diario hacia sedes de la UNMdP y la UTN.</div>
+<div class="card"><div class="big" data-n="84" data-s="%">0</div>de las líneas no tiene a la Universidad como destino prioritario (solo el 15,15% llega al Complejo Belgrano).</div>
+<div class="card"><div class="big" data-n="34" data-s="%">0</div>cayó el IPK del transporte: de 2,48 a 1,64 pasajeros por km.</div>
+</div></div></section>
+
+<section id="participa"><div class="w">
+<div class="grid g2"><div class="card"><h2>Ayudanos a diseñarlo</h2>
+<p>Este mini-relevamiento alimenta la línea de base de la Mesa Intersectorial.</p>
+<form id="f" onsubmit="return false">
+<label for="fb">¿Dónde vivís?</label><select id="fb" style="margin-bottom:10px"></select>
+<label for="ft">¿Cuántos transbordos hacés hoy?</label><select id="ft" style="margin-bottom:10px"><option>0</option><option>1</option><option>2</option><option>3 o más</option></select>
+<label for="fm">Minutos de viaje (un tramo)</label><input type="number" id="fm" min="5" max="180" value="45" style="margin-bottom:10px">
+<label for="fq">¿Qué te complica más?</label><select id="fq" style="margin-bottom:14px"><option>Esperas largas</option><option>Pocas frecuencias de noche</option><option>Caminatas a la parada</option><option>Costo</option></select>
+<button class="btn" id="fs">Enviar</button></form><div id="fo" class="ok" hidden></div></div>
+<div class="card"><h3>Respuestas de este prototipo</h3><p class="hint">Se actualizan al enviar (solo en esta sesión, sin guardar datos).</p><div id="agg"></div></div></div>
+</div></section>
+
+<section id="mesa" style="background:var(--card)"><div class="w">
+<h2>El proyecto en 12 meses</h2>
+<div class="tl" id="tl"></div>
+<div class="card" id="tld" style="margin:14px 0;background:var(--bg)"></div>
+<div class="bar"><i id="pb"></i></div>
+<h3 style="margin-top:28px">Preguntas frecuentes</h3>
+<details open><summary>¿Qué significa MUEVE?</summary><p><b>M</b>ovilidad <b>U</b>niversitaria y <b>E</b>studiantil para <b>V</b>iajes <b>E</b>ficientes.</p></details>
+<details><summary>¿Qué es la Mesa Intersectorial?</summary><p>Un espacio permanente donde el Municipio, las universidades, empresas y trabajadores del transporte, estudiantes y organizaciones territoriales priorizan problemas, evalúan alternativas y acuerdan una propuesta.</p></details>
+<details><summary>¿Reemplaza al colectivo?</summary><p>No: es complementario al transporte público y se piensa para entrar en el nuevo pliego de licitación.</p></details>
+<details><summary>¿Quién lo impulsa?</summary><p>Fundación Mueve Ciudad, junto a la UNMdP, la UTN-FRMdP y el Municipio de General Pueyrredon. Contribuye a los ODS 4, 8 y 11.</p></details>
+</div></section>
+
+<footer><div class="w">MUEVE · Movilidad Universitaria y Estudiantil para Viajes Eficientes · Prototipo de testeo, no es un servicio real. Horarios, recorridos y comparaciones son simulaciones.</div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const N=[
+{id:'camet',n:'Camet',x:525,y:135,k:'b',w:[2,1,1]},
+{id:'sierra',n:'Sierra de los Padres',x:60,y:110,dx:70,k:'b',w:[3,1,1]},
+{id:'batan',n:'Batán',x:150,y:350,k:'b',w:[3,2,1]},
+{id:'pena',n:'Parque Peña',x:520,y:85,k:'b',w:[2,2,2]},
+{id:'centro',n:'Centro',x:495,y:410,k:'b',w:[1,3,3]},
+{id:'puerto',n:'Puerto',x:505,y:505,k:'b',w:[2,2,3]},
+{id:'colinas',n:'Colinas de Peralta Ramos',x:500,y:655,dx:-60,k:'b',w:[3,2,1]},
+{id:'c1',n:'Sede 1',x:512,y:262,k:'s',w:[3,3,3]},
+{id:'c2',n:'Sede 2',x:516,y:300,dx:40,dy:14,k:'s',w:[3,3,3]},
+{id:'c3',n:'Sede 3',x:502,y:318,dx:40,dy:26,k:'s',w:[3,3,3]},
+{id:'c4',n:'Sede 4',x:454,y:335,dx:-36,dy:14,k:'s',w:[3,3,3]},
+{id:'c5',n:'Sede 5',x:454,y:358,dx:30,dy:26,k:'s',w:[3,3,3]},
+{id:'c6',n:'Sede 6',x:426,y:356,dx:-34,dy:26,k:'s',w:[3,3,3]},
+{id:'utn',n:'UTN-FRMdP',x:250,y:440,k:'s',w:[2,3,3]}];
+const byId=Object.fromEntries(N.map(n=>[n.id,n]));
+let S={o:'',d:'',m:'sal',pax:1,fr:'all',tab:0,cor:true};
+const fill=(el,l)=>el.innerHTML=l.map(n=>`<option value="${n.id}">${n.n}</option>`).join('');
+fill($('#o'),N.filter(n=>n.k=='b'));fill($('#d'),N.filter(n=>n.k=='s'));fill($('#fb'),N.filter(n=>n.k=='b'));
+S.o=$('#o').value;S.d=$('#d').value;
+const hm=m=>{m=((Math.round(m)%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+const pm=t=>{const[a,b]=t.split(':');return +a*60+ +b};
+const trip=(a,b)=>{const km=Math.hypot(a.x-b.x,a.y-b.y)/38;return{km,min:Math.round(9+km*3.1)}};
+
+/* MAP */
+const svg=$('#map');
+function drawMap(){
+ const o=byId[S.o],d=byId[S.d];
+ let h=`<path d="M575 0 L575 50 L560 140 L540 230 L525 300 L545 400 L520 470 L545 560 L520 640 L480 715 L825 715 L825 0Z" fill="#7fb4ff" opacity=".45"/><text x="700" y="360" style="font-size:16px;fill:var(--mut)" text-anchor="middle">Mar Argentino</text>${S.cor?'<path d="M495 262 L535 292 L526 324 L470 388 L416 352 L440 320Z" fill="#ff6b6b" opacity=".3" stroke="#ff6b6b" stroke-width="2"/><text x="330" y="300" style="font-size:16px;fill:var(--warn)" text-anchor="middle">Corredor universitario</text>':''}`;
+ h+=`<path d="M0 375 L200 372 L350 360 L450 345 M418 120 L470 250 L500 290 M560 150 L535 300 L520 420 L540 520 M260 430 L400 380 L450 350" stroke="var(--br)" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+ if(o&&d){const mx=(o.x+d.x)/2+(o.y-d.y)*.12,my=(o.y+d.y)/2+(d.x-o.x)*.12;
+  h+=`<path id="rt" d="M${o.x} ${o.y} Q${mx} ${my} ${d.x} ${d.y}" stroke="var(--pri)" stroke-width="4" fill="none" stroke-dasharray="9 7"/>
+  <g><circle r="9" fill="var(--acc)" stroke="#fff" stroke-width="2"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#rt"/></animateMotion></circle></g>`}
+ const fi=S.fr=='m'?0:S.fr=='t'?1:S.fr=='n'?2:-1;
+ N.forEach(n=>{const w=fi<0?(n.w[0]+n.w[1]+n.w[2])/3:n.w[fi];
+  const r=n.k=='s'?9:6+w*2,c=n.k=='s'?'var(--acc)':'var(--pri)',sel=n.id==S.o||n.id==S.d;
+  h+=`<g class="nd" data-id="${n.id}" tabindex="0" role="button" aria-label="${n.n}"><circle cx="${n.x}" cy="${n.y}" r="${r}" fill="${c}" stroke="${sel?'var(--warn)':'#fff'}" stroke-width="${sel?4:2}" opacity=".92"/>
+  <text x="${n.x+(n.dx||0)}" y="${n.y-r-6+(n.dy||0)}" text-anchor="middle">${n.k=='s'?'🎓 ':''}${n.n}</text></g>`});
+ svg.innerHTML=h;
+ svg.querySelectorAll('.nd').forEach(g=>{const f=()=>pick(g.dataset.id);g.onclick=f;g.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();f()}}});
+ const t=o&&d?trip(o,d):null;
+ $('#sel').innerHTML=`<b>Origen:</b> ${o?o.n:'—'}<br><b>Destino:</b> ${d?d.n:'—'}`+(t?`<br><br>≈ ${t.min} min · ${t.km.toFixed(1)} km<br><button class="btn" style="margin-top:10px" onclick="location.hash='#reservar'">Reservar este viaje</button>`:'')}
+function pick(id){const n=byId[id];if(n.k=='b')S.o=id;else S.d=id;$('#o').value=S.o;$('#d').value=S.d;drawMap()}
+$('#o').onchange=e=>{S.o=e.target.value;drawMap()};$('#d').onchange=e=>{S.d=e.target.value;drawMap()};
+$('#fr').onchange=e=>{S.fr=e.target.value;drawMap()};$('#cor').onchange=e=>{S.cor=e.target.checked;drawMap()};
+
+/* BOOKING */
+document.querySelectorAll('#mode button').forEach(b=>b.onclick=()=>{S.m=b.dataset.m;document.querySelectorAll('#mode button').forEach(x=>x.classList.toggle('on',x==b))});
+$('#mn').onclick=()=>{S.pax=Math.max(1,S.pax-1);$('#pv').textContent=S.pax};
+$('#mp').onclick=()=>{S.pax=Math.min(4,S.pax+1);$('#pv').textContent=S.pax};
+$('#go').onclick=()=>{
+ const o=byId[S.o],d=byId[S.d],t=trip(o,d),T=pm($('#h').value||'07:30');
+ const offs=[0,8,17],share=[2,1,0];
+ const wk=[120,260,410];
+ let h=`<p style="margin:18px 0 0"><b>${o.n} → ${d.n}</b> · ${S.pax} pasajero${S.pax>1?'s':''} · ${S.m=='sal'?'salida':'llegada'} cerca de ${hm(T)}</p>`;
+ offs.forEach((of,i)=>{
+  const dep=S.m=='sal'?T+of:T-t.min-of-(i?0:0),arr=dep+t.min+share[i]*3;
+  h+=`<div class="opt ${i==0?'best':''}"><div class="t">${hm(dep)}</div><div class="i"><b>Llegás ${hm(arr)}</b> · ${t.min+share[i]*3} min${i==0?'<span class="tag">MÁS EFICIENTE</span>':''}<br>Parada a ${wk[i]} m · comparte con ${share[i]+S.pax-1+(i==0?1:0)} persona(s) de rutas compatibles</div><button class="btn" data-i="${i}" data-dep="${hm(dep)}" data-arr="${hm(arr)}">Elegir</button></div>`});
+ const fx=Math.round(t.min*1.9+14),tr=t.km>6?2:1;
+ h+=`<div class="cmp">⚖️ Referencia simulada en línea fija: ~${fx} min y ${tr} transbordo${tr>1?'s':''}. Con MUEVE: ${t.min+3} min y 0 transbordos.</div>`;
+ $('#res').innerHTML=h;
+ $('#res').querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{
+  const code='MUEVE-'+Math.random().toString(36).slice(2,6).toUpperCase();
+  $('#res').insertAdjacentHTML('beforeend',`<div class="ok" id="cf"><h3>✅ Reserva confirmada · ${code}</h3>Subís en <b>${o.n}</b> a las <b>${b.dataset.dep}</b> y llegás a <b>${d.n}</b> a las <b>${b.dataset.arr}</b>.<br><span class="hint">Presentá tu credencial universitaria al subir. Estarás en la parada 5 minutos antes.</span><div style="margin-top:10px"><button class="btn o" id="cx">Cancelar reserva</button></div></div>`);
+  $('#cx').onclick=()=>{$('#cf').innerHTML='Reserva cancelada. Podés buscar otro horario.'};
+  $('#cf').scrollIntoView({behavior:'smooth',block:'center'})})};
+
+/* TABS */
+const TB=[['1 · Reservá','Elegí origen, destino, día y hora (o a qué hora querés llegar). Podés hacerlo desde la web, una app o por teléfono.','Resultado: una propuesta instantánea con hora de retiro y de llegada.'],
+['2 · Se agrupa','Un algoritmo reúne solicitudes compatibles (origen, destino, horario, pasajeros) y crea el recorrido más eficiente.','Resultado: menos vehículos vacíos, menos esperas.'],
+['3 · Viajá','Vas a la parada indicada, seguís el vehículo en vivo y subís con tu credencial universitaria.','Resultado: viaje directo, sin transbordos de más.'],
+['4 · Opiná','Tras cada viaje calificás la experiencia. Esos datos vuelven a la Mesa Intersectorial para ajustar el servicio.','Resultado: un sistema que aprende de sus usuarios.']];
+$('#tabs').innerHTML=TB.map((t,i)=>`<button data-i="${i}" class="${i?'':'on'}">${t[0]}</button>`).join('');
+function tab(i){document.querySelectorAll('#tabs button').forEach((b,j)=>b.classList.toggle('on',i==j));$('#tabc').innerHTML=`<p style="font-size:18px;margin:0 0 8px">${TB[i][1]}</p><p class="hint" style="margin:0">${TB[i][2]}</p>`}
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>tab(+b.dataset.i));tab(0);
+
+/* COUNTERS */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
+ const el=e.target,to=+el.dataset.n,s=el.dataset.s||'';let k=0;const iv=setInterval(()=>{k+=to/30;if(k>=to){k=to;clearInterval(iv)}el.textContent=Math.round(k).toLocaleString('es-AR')+s},25)}));
+document.querySelectorAll('[data-n]').forEach(e=>io.observe(e));
+
+/* SURVEY */
+const A={};
+$('#fs').onclick=()=>{const b=byId[$('#fb').value].n;A[b]=(A[b]||0)+1;
+ $('#fo').hidden=false;$('#fo').innerHTML=`¡Gracias! Registramos que vivís en <b>${b}</b>, hacés ${$('#ft').value} transbordo(s) y tardás ${$('#fm').value} min.`;
+ const mx=Math.max(...Object.values(A));
+ $('#agg').innerHTML=Object.entries(A).map(([k,v])=>`<div style="margin:8px 0">${k} · ${v}<div class="bar"><i style="width:${v/mx*100}%"></i></div></div>`).join('')};
+$('#agg').innerHTML='<p class="hint">Todavía no hay respuestas.</p>';
+
+/* TIMELINE */
+const P=[['Mesa Intersectorial','Se conforma en los meses 1–3 y sigue activa los 12 meses (≥6 instancias formales).'],['Relevamiento y línea de base','Encuesta de movilidad y mapa de déficits (meses 1–3).'],['Diseño de alternativas','Al menos 3 alternativas a demanda (meses 4–6).'],['Evaluación comparativa','Criterios técnicos, económicos, institucionales, de accesibilidad y sostenibilidad (6–8).'],['Talleres participativos','3 talleres de diseño con usuarios (meses 7–10).'],['Priorización y ajustes','La Mesa elige una alternativa y define condiciones de implementación (9–11).'],['Propuesta final','Documento como insumo del nuevo sistema de transporte (11–12).']];
+const MS=[[0,1,2],[0,1],[2,3,4,5],[5,6,7],[6,7,8,9],[8,9,10],[10,11]];
+$('#tl').innerHTML=Array.from({length:12},(_,i)=>`<button data-m="${i}">${i+1}</button>`).join('');
+function mes(i){document.querySelectorAll('#tl button').forEach((b,j)=>b.classList.toggle('on',i==j));
+ const a=MS.map((m,k)=>m.includes(i)?`<li><b>${P[k][0]}</b>: ${P[k][1]}</li>`:'').join('');
+ $('#tld').innerHTML=`<b>Mes ${i+1}</b><ul style="margin:8px 0 0;padding-left:20px">${a}</ul>`;$('#pb').style.width=((i+1)/12*100)+'%'}
+document.querySelectorAll('#tl button').forEach(b=>b.onclick=()=>mes(+b.dataset.m));mes(0);
+drawMap();
+</script>
+</body>
+</html>
